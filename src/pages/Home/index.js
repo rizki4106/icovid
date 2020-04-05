@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, Image, TouchableOpacity} from 'react-native'
+import {View, Text, Image, TouchableOpacity, Alert} from 'react-native'
 import style from '../../style';
 import MapView, {Marker} from 'react-native-maps';
 import {getDistance} from 'geolib'
@@ -28,6 +28,24 @@ class Home extends Component{
         }
     }
 
+    currentLocation = () => {
+        GetLocation.getCurrentPosition({
+            enableHighAccuracy: true,
+            timeout: 15000,
+        }).then(lokasi => {
+            this.setState({
+                asal: {
+                    latitude: lokasi.latitude,
+                    longitude: lokasi.longitude,
+                    latitudeDelta: 0.010,
+                    longitudeDelta: 0.010,
+                }
+            })
+        }).catch(err => {
+            Alert.alert(err);
+        })
+    }
+
     async componentDidMount(){
 
         NetInfo.fetch().then(res => {
@@ -52,9 +70,11 @@ class Home extends Component{
                 })
             }else{
                 AndroidOpenSeting.locationSourceSettings();
+                this.currentLocation();     
             }
         }).catch(() => {
             AndroidOpenSeting.locationSourceSettings();
+            this.currentLocation();
         })
 
         const getLoc = await fetch('http://health.senidigitalku.com/public/api/lokasi');

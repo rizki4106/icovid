@@ -11,7 +11,7 @@ function BoxData(props){
             </View>
             <View style={style.covidMainData}>
                 <View style={style.boxMainData}>
-                    <Text style={[style.mediumFont, {color: 'yellow', fontSize: 16,marginVertical: 10,}]}>{props.positif}</Text>
+                    <Text style={[style.mediumFont, {color: '#FFAB08', fontSize: 16,marginVertical: 10,}]}>{props.positif}</Text>
                     <Text style={style.regularFont}>POSITIF</Text>
                 </View>
                 <View style={style.boxMainData}>

@@ -183,6 +183,8 @@ const style = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
+        borderWidth: 1,
+        borderColor: '#F0F0F0',
         // shadowColor: 'rgba(0,0,0,0.1)',
         // shadowOffset: {width: 0, height: 5},
         // shadowOpacity: 0.29,
