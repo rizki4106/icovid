@@ -1,5 +1,8 @@
 # icovid
 icovid merupakan aplikasi untuk menghitung jarak antara daerah yang terpapar COVID - 19 dengan tempat kita berada sekarang.
+<br/>
+<img src="http://health.senidigitalku.com/public/image/tracking.png" width="300"/>
+<img src="http://health.senidigitalku.com/public/image/data.png" width="300"/>
 ## Licence
 aplikasi icovid ini bersifat open source semua orang boleh untuk melakukan modifikasi dan juga menambahkan fitur didalamnya.
 ## Persyaratan untuk berkontribusi
