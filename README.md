@@ -10,7 +10,7 @@ aplikasi icovid ini bersifat open source semua orang boleh untuk melakukan modif
 1. Menguasai React Native
 2. Syntax baru javascript
 3. Object Oriented Programming
-4. Ekosistem Sistem Operasi Android
+4. Memahami ekosistem sistem operasi android
 
 ## Memulai berkontribusi
 ```
