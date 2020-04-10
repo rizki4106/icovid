@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {SplashScreen} from './src/pages';
 import Router from './src/config/router';
+import {Beranda} from './src/pages';
 
 class App extends Component{
   constructor(props)
@@ -21,10 +22,14 @@ class App extends Component{
   }
 
   render(){
-    if(this.state.loading)
-    {
-      return(<SplashScreen/>)
-    }
+    // if(this.state.loading)
+    // {
+    //   return(<SplashScreen/>)
+    // }
+    // return(
+    //   <Router/>
+    // )
+
     return(
       <Router/>
     )

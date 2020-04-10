@@ -282,6 +282,56 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 30,
+    },
+    // new page
+    // home
+    dataDetail: {
+        width: '100%',
+        height: 200,
+        backgroundColor: 'white',
+        borderRadius: 5,
+        marginVertical: 20,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        shadowColor: '#dfd3d3',
+        shadowOffset: {
+            width: 0,
+            height: 10,
+        },
+        shadowRadius: 20,
+        shadowOpacity: 0.2,
+        elevation: 8,
+    },
+    graphicBox: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 200,
+    },
+    subData: {
+        width: '45%',
+        height: 179,
+        backgroundColor: 'white',
+        shadowColor: '#dfd3d3',
+        shadowOffset: {
+            width: 0,
+            height: -10,
+        },
+        shadowRadius: 50,
+        shadowOpacity: 0.2,
+        elevation: 8,
+        borderRadius: 5,
+        paddingVertical: 10,
+        paddingHorizontal: 10,
+        alignItems: 'center',
+    },
+    BoxWilayah2 : 
+    {
+        width:'100%',
+        height: 50,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
     }
 
 })

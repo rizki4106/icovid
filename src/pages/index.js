@@ -1,16 +1,15 @@
 import SplashScreen from './SplashScreen';
-import Home from './Home';
-import Data from './Data';
-import Berita from './Berita';
-import DetailBerita from './DetailBerita';
+import Beranda from './Beranda';
+import Global from './Global';
 import Error from './Error';
+import Maps from './Maps';
+
 
 export 
 {
     SplashScreen,
-    Home,
-    Data,
-    Berita,
-    DetailBerita,
+    Beranda,
+    Global,
+    Maps,
     Error,
 }

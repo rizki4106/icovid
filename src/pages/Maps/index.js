@@ -8,7 +8,7 @@ import Navigation from '../../molekul/Navigation';
 import NetInfo from '@react-native-community/netinfo'
 import AndroidOpenSeting from 'react-native-android-open-settings';
 
-class Home extends Component{
+class Maps extends Component{
     constructor(props)
     {
         super(props)
@@ -222,4 +222,4 @@ class Home extends Component{
     }
 }
 
-export default Home;
+export default Maps;
