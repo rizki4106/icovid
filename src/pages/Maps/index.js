@@ -211,9 +211,6 @@ class Maps extends Component{
 
                     </View>
                     {/* akhir detail */}
-                    {/* footer */}
-                    <Navigation style={{width: '100%', left: 0}} data={this.props} aktif="Home"/>
-                    {/* akhir footer */} 
                 </View>
                 {/* akhir keterangan wilayah */}
             </View>

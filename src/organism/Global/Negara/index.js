@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import style from '../../../style';
-import BoxData from '../../../molekul/Beranda/Daerah';
+import BoxData from '../../../molekul/Global/BoxData';
 
 
 class Daerah extends Component
@@ -13,6 +13,7 @@ class Daerah extends Component
             region: [],
         }
     }
+
     render(){
         return(
             <>
@@ -20,7 +21,7 @@ class Daerah extends Component
                 {/* header wilayah */}
                 <View style={style.BoxWilayah2}>
                     <View style={{flex: 1}}>
-                    <Text style={[style.boldFont, {fontSize: 14}]}>Daerah</Text>
+                    <Text style={[style.boldFont, {fontSize: 14}]}>Negara</Text>
                     </View>
                     <View style={{flex: 1, flexDirection: 'row'}}>
                         <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>

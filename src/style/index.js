@@ -332,6 +332,25 @@ const style = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
+    },
+    // halaman pencarian
+    searchBar: {
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        backgroundColor: '#F7F7F7',
+        borderRadius: 50,
+        paddingHorizontal: 20,
+    },
+    noData: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        minHeight: 400,
+    },
+    hideData: {
+        display: 'none',
     }
 
 })

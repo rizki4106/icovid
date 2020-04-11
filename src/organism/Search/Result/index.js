@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import style from '../../../style';
-import BoxData from '../../../molekul/Beranda/Daerah';
+import BoxData from '../../../molekul/Search/BoxData';
 
 
-class Daerah extends Component
+class Result extends Component
 {
     constructor(props)
     {
@@ -13,6 +13,12 @@ class Daerah extends Component
             region: [],
         }
     }
+
+    componentDidMount(){
+        console.log('from result')
+        console.log(this.props.data);
+    }
+
     render(){
         return(
             <>
@@ -20,7 +26,7 @@ class Daerah extends Component
                 {/* header wilayah */}
                 <View style={style.BoxWilayah2}>
                     <View style={{flex: 1}}>
-                    <Text style={[style.boldFont, {fontSize: 14}]}>Daerah</Text>
+                    <Text style={[style.boldFont, {fontSize: 14}]}>Wilayah</Text>
                     </View>
                     <View style={{flex: 1, flexDirection: 'row'}}>
                         <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
@@ -42,4 +48,4 @@ class Daerah extends Component
     }
 }
 
-export default Daerah;
+export default Result;

@@ -1,8 +1,9 @@
 import SplashScreen from './SplashScreen';
 import Beranda from './Beranda';
 import Global from './Global';
-import Error from './Error';
+import Search from './Search';
 import Maps from './Maps';
+import Error from './Error';
 
 
 export 
@@ -10,6 +11,7 @@ export
     SplashScreen,
     Beranda,
     Global,
+    Search,
     Maps,
     Error,
 }
