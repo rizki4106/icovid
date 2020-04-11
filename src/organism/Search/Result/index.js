@@ -14,11 +14,6 @@ class Result extends Component
         }
     }
 
-    componentDidMount(){
-        console.log('from result')
-        console.log(this.props.data);
-    }
-
     render(){
         return(
             <>

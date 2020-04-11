@@ -3,7 +3,7 @@ import DataCovid from '../DataCovid';
 import Daerah from '../Daerah';
 import {ScrollView, View, Image, Text} from 'react-native';
 import style from '../../../style';
-import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 class root extends Component {
 

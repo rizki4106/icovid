@@ -1,55 +1,57 @@
 import React, {Component} from 'react';
+import {View,Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { FontAwesome } from 'react-native-vector-icons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/AntDesign';
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 import {Beranda,Global,Search,Maps,Error} from '../../pages';
 
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 class App extends Component{
     render(){
         return(
             <>
             <NavigationContainer>
-                <Tab.Navigator initialRouteName="Home" activeColor="gray" inactiveColor="#dfd3d3" barStyle={{backgroundColor: 'white', borderTopColor: '#dfd3d3', borderTopWidth: 1}}>
+                <Tab.Navigator initialRouteName="Home" labelStyle={{backgroundColor: 'white', borderTopColor: '#dfd3d3', borderTopWidth: 1}}
+                tabBarOptions={{
+                    inactiveTintColor: '#dfd3d3',
+                    activeTintColor: '#4A4F5D',
+                    keyboardHidesTabBar: true,
+                }}
+                >
                     <Tab.Screen name="Home" component={Beranda} 
-                    navigationOptions={{
-                        tabBarLabel: 'Home',
-                        tabBarIcon: () => (
-                            <FontAwesome name="home" color={'red'} size={25}/>
-                        )
-                    }}/>
+                    options={{
+                        tabBarLabel: 'Beranda',
+                        tabBarIcon: ({color}) => (<Icon name="home" color={color} size={25}/>)
+                    }}
+                    />
                     
                     <Tab.Screen
                     name="Global"
                     component={Global}
-                    navigationOptions={{
-                        tabBarLabel: 'Global',
-                        tabBarIcon: ({ color }) => (
-                        <FontAwesome name="Home" color={color} size={25}/>),
+                    options={{
+                        tabBarLabel: 'Dunia',
+                        tabBarIcon: ({color}) => (<FontAwesome name="globe" size={25} color={color}/>)
                     }}
                     />
 
                     <Tab.Screen
-                    name="Search"
+                    name="Cari"
                     component={Search}
-                    navigationOptions={{
-                        tabBarLabel: 'Search',
-                        tabBarIcon: ({ color }) => (
-                            <FontAwesome name="search" color={color} size={26}/>
-                        )
+                    options={{
+                        tabBarLabel: 'Cari',
+                        tabBarIcon: ({color}) => (<Icon name="search1" color={color} size={25}/>)
                     }}
                     />
 
                     <Tab.Screen 
-                    name="Maps" 
+                    name="Lokasi" 
                     component={Maps}
-                    navigationOptions={{
-                        tabBarLabel: 'Maps',
-                        tabBarIcon: ({ color }) => (
-                            <FontAwesome name="home" color={color} size={26}/>
-                        )
+                    options={{
+                        tabBarLabel: 'Lokasi',
+                        tabBarIcon: ({color}) => (<FontAwesome name="location-arrow" size={25} color={color}/>)
                     }}
                     />
 

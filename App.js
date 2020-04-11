@@ -22,14 +22,10 @@ class App extends Component{
   }
 
   render(){
-    // if(this.state.loading)
-    // {
-    //   return(<SplashScreen/>)
-    // }
-    // return(
-    //   <Router/>
-    // )
-
+    if(this.state.loading)
+    {
+      return(<SplashScreen/>)
+    }
     return(
       <Router/>
     )

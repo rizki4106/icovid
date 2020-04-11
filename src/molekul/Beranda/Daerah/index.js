@@ -8,9 +8,6 @@ class Daerah extends Component
     {
         super(props)
     }
-    componentDidMount(){
-        console.log(this.props.data);
-    }
     render(){
         return(
             <>

@@ -4,7 +4,6 @@ import style from '../../style';
 import MapView, {Marker} from 'react-native-maps';
 import {getDistance} from 'geolib'
 import GetLocation from 'react-native-get-location'
-import Navigation from '../../molekul/Navigation';
 import NetInfo from '@react-native-community/netinfo'
 import AndroidOpenSeting from 'react-native-android-open-settings';
 
@@ -192,7 +191,7 @@ class Maps extends Component{
                                 <Text style={[style.boldFont, {color: '#363636', fontSize: 12,marginBottom: 5,}]}>Peringatan</Text>
                                 <Text style={{fontFamily: 'Montserrat-Regular', color: '#716A6A', fontSize: 10}}>Daerah terdekat terpapar COVID - 19</Text>
                             </View>
-                            <TouchableOpacity style={style.detailBtn} onPress={() => {this.props.navigation.navigate("Data")}}>
+                            <TouchableOpacity style={style.detailBtn} onPress={() => {this.props.navigation.navigate("Home")}}>
                                 <Text style={[style.regularFont, {color: 'white'}]}>Detail</Text>
                             </TouchableOpacity>
                         </View>
