@@ -81,6 +81,87 @@ const style = StyleSheet.create({
     dataSetReal: {
         flex: 1,
         alignItems: 'center',
+    },
+    // halaman donasi
+    boxInput: {
+        width: '100%',
+        height: 50,
+        position: 'relative',
+        borderBottomWidth: 1,
+        borderBottomColor: '#dfd3d3',
+        marginVertical: 15,
+    },
+    labelInput: {
+        fontSize: 11,
+        color: '#4F6CFF',
+        fontFamily: 'Montserrat-Bold',
+        position: 'absolute',
+        left: 2,
+        backgroundColor: 'white',
+    },
+    labelPosition1: {
+        top: 10,
+    },
+    labelPosition2: {
+        top: -15,
+    },
+    choseImg: {
+        width: 50,
+        height: 50,
+        borderWidth: 2,
+        borderStyle: 'dotted',
+        borderRadius: 150,
+        borderColor: '#252448',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    boxImg: {
+        width: 50,
+        height: 50,
+        position: 'relative',
+        marginRight: 10,
+    },
+    removeImg: {
+        width: 20,
+        height: 20,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 50,
+        borderColor: '#252448',
+        borderWidth: 1,
+        position: 'absolute',
+        right: -4,
+        top: -3,
+        zIndex: 1,
+    },
+    imgStyle: {
+        width: 50,
+        height: 50,
+        borderRadius: 5,
+        borderWidth: 2,
+        borderColor: '#252448',
+    },
+    textArea: {
+        borderBottomWidth: 1,
+        borderBottomColor: '#dfd3d3',
+        paddingVertical: 20,
+        paddingHorizontal: 0,
+        minHeight: 100,
+    },
+    btnUpload: 
+    {
+        width: '100%',
+        height: 40,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#4F6CFF',
+        borderRadius: 5,
+        marginVertical: 30,
+    },
+    lottie: {
+        width: 100,
+        height: 100,
     }
 })
 

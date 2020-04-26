@@ -11,6 +11,10 @@ import Login from './new/Login';
 import Home from './new/Home'
 import Statistik from './new/Statistik'
 
+// donasi
+
+import DonasiUpload from './new/DonasiUpload';
+
 export 
 {
     SplashScreen,
@@ -23,4 +27,5 @@ export
     Login,
     Home,
     Statistik,
+    DonasiUpload,
 }

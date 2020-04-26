@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {SplashScreen} from './src/pages';
 import Router from './src/config/router';
-import {Login, Home, Statistik, Maps} from './src/pages';
+import {Login, Home, Statistik, Maps, DonasiUpload} from './src/pages';
 
 class App extends Component{
   constructor(props)
@@ -30,7 +30,7 @@ class App extends Component{
     //   <Router/>
     // )
     return(
-      <Maps/>
+      <DonasiUpload/>
     )
   }
 }
