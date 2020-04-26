@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {SplashScreen} from './src/pages';
 import Router from './src/config/router';
-import {Beranda, Global, Search} from './src/pages';
+import {Login, Home, Statistik, Maps} from './src/pages';
 
 class App extends Component{
   constructor(props)
@@ -12,22 +12,25 @@ class App extends Component{
     }
   }
 
-  componentDidMount()
-  {
-    setTimeout(() => {
-      this.setState({
-        loading: false,
-      })
-    }, 3000)
-  }
+  // componentDidMount()
+  // {
+  //   setTimeout(() => {
+  //     this.setState({
+  //       loading: false,
+  //     })
+  //   }, 3000)
+  // }
 
   render(){
-    if(this.state.loading)
-    {
-      return(<SplashScreen/>)
-    }
+    // if(this.state.loading)
+    // {
+    //   return(<SplashScreen/>)
+    // }
+    // return(
+    //   <Router/>
+    // )
     return(
-      <Router/>
+      <Maps/>
     )
   }
 }

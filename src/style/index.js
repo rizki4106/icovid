@@ -86,12 +86,35 @@ const style = StyleSheet.create({
     },
     containerLoc: {
         width: '100%',
-        minHeight: 265,
+        minHeight: 420,
         position: 'absolute',
         zIndex: 1,
         bottom: 0,
-        paddingHorizontal: 20,
+        paddingHorizontal: 0,
     },
+    // new maps code
+    newDetail:{
+        flex: 1,
+        backgroundColor: 'white',
+        borderWidth: 1,
+        borderColor: '#dfd3d3',
+        borderTopRightRadius: 20,
+        borderTopLeftRadius: 20,
+        paddingHorizontal: 20,
+        paddingVertical: 20,
+    },
+    barClose: {
+        width: 50,
+        height: 5,
+        borderRadius: 50,
+        backgroundColor: '#C4C4C4',
+    },
+    alertInfo: {
+        width: '100%',
+        height: 100,
+        marginVertical: 20,
+    },
+    // end of new maps code
     betWeenScontent : {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -118,6 +141,10 @@ const style = StyleSheet.create({
         alignItems: 'center',
         borderWidth: 1,
         borderColor: '#dfd3d3',
+        position: 'absolute',
+        right: 20,
+        zIndex: 1,
+        top: -80,
     },
     detailLoc: {
       backgroundColor: 'white',

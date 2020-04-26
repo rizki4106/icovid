@@ -30,7 +30,7 @@ class Daerah extends Component
                 </View>
             </View>
             ))
-            : <Text>''</Text>
+            : <Text></Text>
             }
             </>
         )

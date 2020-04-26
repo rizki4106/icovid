@@ -6,6 +6,8 @@ import {getDistance} from 'geolib'
 import GetLocation from 'react-native-get-location'
 import NetInfo from '@react-native-community/netinfo'
 import AndroidOpenSeting from 'react-native-android-open-settings';
+import Icon from 'react-native-vector-icons/Octicons'
+import ParentData from '../../organism/new/Statistik/ParentData';
 
 class Maps extends Component{
     constructor(props)
@@ -23,7 +25,20 @@ class Maps extends Component{
                 latitudeDelta: 0.500,
                 longitudeDelta: 0.500,
                 nama: 'Aktifkan Lokasi',
-            }
+            },
+            rootData: {
+                confirmed: 0,
+                deaths: 0,
+                recovered: 0,
+                positif: 0,
+            },
+            hiddenDetails: true,
+            detailData: {
+                positif: 0,
+                recovered: 0,
+                deaths: 0,
+                confirmed: 0,
+            },
         }
     }
 
@@ -67,6 +82,7 @@ class Maps extends Component{
                         longitudeDelta: 0.010,
                     }
                 })
+                this.getLocationData()
             }else{
                 AndroidOpenSeting.locationSourceSettings();
                 this.currentLocation();     
@@ -136,6 +152,33 @@ class Maps extends Component{
         
     }
 
+    handleDetailsData(){
+        this.setState({
+            hiddenDetails: !this.state.hiddenDetails,
+        })
+    }
+
+    // get detail national data
+    async getLocationData(){
+        const req = await fetch('https://api.kawalcorona.com/indonesia/provinsi')
+        const res = await req.json();
+        const filtered = await res.filter(value => {
+            return value.attributes.Provinsi == this.state.current.name;
+        })
+
+        if(filtered.length > 0){
+
+            await this.setState({
+                detailData: {
+                    positif: filtered[0].attributes.Kasus_Posi - (filtered[0].attributes.Kasus_Semb + filtered[0].attributes.Kasus_Meni),
+                    confirmed: filtered[0].attributes.Kasus_Posi,
+                    deaths: filtered[0].attributes.Kasus_Meni,
+                    recovered: filtered[0].attributes.Kasus_Semb,
+                }
+            })
+        }
+    }
+
     render(){
         const el = this.state;
         return(
@@ -167,13 +210,10 @@ class Maps extends Component{
                 {/* navbar */}
                 {/* akhir navbar */}
                 {/* keterangan wilayah */}
-                <View style={style.containerLoc}>
+                <View style={[style.containerLoc, (this.state.hiddenDetails) ? {minHeight: 20} : {minHeight: 420}]}>
 
                     <View style={style.betWeenScontent}>
-
-                        <View>
-
-                        </View>
+                        <View></View>
                         {/* get location */}
                         <TouchableOpacity style={style.getLocation} onPress={() => {this.getCurrentLocation()}}>
                             <Image source={require('../../atom/Home/nonactiveCurrentLocation.png')} style={{width: 20, height: 20}}/>
@@ -181,35 +221,27 @@ class Maps extends Component{
                         {/* end */}
 
                     </View>
-
-                    {/* detail informasi */}
-                    <View style={style.detailLoc}>
-                        {/* alert pertama */}
-
-                        <View style={style.alert1}>
-                            <View style={style.alertContent}>
-                                <Text style={[style.boldFont, {color: '#363636', fontSize: 12,marginBottom: 5,}]}>Peringatan</Text>
-                                <Text style={{fontFamily: 'Montserrat-Regular', color: '#716A6A', fontSize: 10}}>Daerah terdekat terpapar COVID - 19</Text>
-                            </View>
-                            <TouchableOpacity style={style.detailBtn} onPress={() => {this.props.navigation.navigate("Home")}}>
-                                <Text style={[style.regularFont, {color: 'white'}]}>Detail</Text>
+                    {/* detail baru */}
+                    <View style={style.newDetail}>
+                        <View style={{width: '100%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
+                            {/* header */}
+                            <TouchableOpacity style={style.barClose} onPress={() => {this.handleDetailsData()}}>
                             </TouchableOpacity>
+                            {/* end of header */}
                         </View>
-
-                        {/* alert ke 2 */}
-
-                        <View style={style.alert2}>
-                            <View style={{width: '20%', justifyContent: 'center', alignItems: 'baseline'}}>
-                                <Image source={require('../../atom/Home/bigloc.png')} style={{width: 40, height: 55,}}/>
+                        <View style={style.alertInfo}>
+                            <Text style={[style.boldFont, {fontSize: 16, color: '#252448'}]}>Pemberitahuan</Text>
+                            <Text style={[style.regularFont, {color: '#252448', marginVertical: 10}]}>Daerah terpapar COVID - 19 terdekat</Text>
+                            {/* distance */}
+                            <View style={{width: '100%', flexDirection: 'row', alignItems: 'center', marginVertical: 10,}}>
+                                <Icon name="location" size={26} color='#252448'/>
+                                <Text style={[style.regularFont, {color: '#716a6a', marginLeft: 10}]}>{this.state.current.distance.toLocaleString()} km dari tempat kamu</Text>
                             </View>
-                            <View style={{width: '80%'}}>
-                                <Text style={[style.boldFont, {fontSize: 14}]}>{this.state.current.name}</Text>
-                                <Text style={[style.regularFont, {marginTop: 6, fontSize: 11}]}>{this.state.current.distance} KM lurus dari tempat kamu</Text>
-                            </View>
+                            <ParentData wilayah={this.state.current.name} data={this.state.detailData}/>
+                            {/*  */}
                         </View>
-
                     </View>
-                    {/* akhir detail */}
+                    {/* akhir detail baru */}
                 </View>
                 {/* akhir keterangan wilayah */}
             </View>
