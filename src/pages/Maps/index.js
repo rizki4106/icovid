@@ -210,17 +210,14 @@ class Maps extends Component{
                 {/* navbar */}
                 {/* akhir navbar */}
                 {/* keterangan wilayah */}
-                <View style={[style.containerLoc, (this.state.hiddenDetails) ? {minHeight: 20} : {minHeight: 420}]}>
+                <View style={[style.containerLoc, (this.state.hiddenDetails) ? {minHeight: 20, zIndex: 1} : {minHeight: 420, zIndex: 1}]}>
 
-                    <View style={style.betWeenScontent}>
-                        <View></View>
                         {/* get location */}
-                        <TouchableOpacity style={style.getLocation} onPress={() => {this.getCurrentLocation()}}>
+                        <TouchableOpacity style={style.getLocation} onPress={() => {this.getCurrentLocation(); console.log('working')}}>
                             <Image source={require('../../atom/Home/nonactiveCurrentLocation.png')} style={{width: 20, height: 20}}/>
                         </TouchableOpacity>
                         {/* end */}
 
-                    </View>
                     {/* detail baru */}
                     <View style={style.newDetail}>
                         <View style={{width: '100%', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>

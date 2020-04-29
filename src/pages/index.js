@@ -1,6 +1,4 @@
 import SplashScreen from './SplashScreen';
-import Beranda from './Beranda';
-import Global from './Global';
 import Search from './Search';
 import Maps from './Maps';
 import Error from './Error';
@@ -11,15 +9,9 @@ import Login from './new/Login';
 import Home from './new/Home'
 import Statistik from './new/Statistik'
 
-// donasi
-
-import DonasiUpload from './new/DonasiUpload';
-
 export 
 {
     SplashScreen,
-    Beranda,
-    Global,
     Search,
     Maps,
     Error,
@@ -27,5 +19,4 @@ export
     Login,
     Home,
     Statistik,
-    DonasiUpload,
 }

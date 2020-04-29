@@ -144,7 +144,7 @@ const style = StyleSheet.create({
         position: 'absolute',
         right: 20,
         zIndex: 1,
-        top: -80,
+        top: 30,
     },
     detailLoc: {
       backgroundColor: 'white',

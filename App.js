@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {SplashScreen} from './src/pages';
 import Router from './src/config/router';
-import {Login, Home, Statistik, Maps, DonasiUpload} from './src/pages';
+import {Home,Statistik, Maps, DonasiUpload} from './src/pages';
 
 class App extends Component{
   constructor(props)
@@ -12,25 +12,22 @@ class App extends Component{
     }
   }
 
-  // componentDidMount()
-  // {
-  //   setTimeout(() => {
-  //     this.setState({
-  //       loading: false,
-  //     })
-  //   }, 3000)
-  // }
+  componentDidMount()
+  {
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+      })
+    }, 3000)
+  }
 
   render(){
-    // if(this.state.loading)
-    // {
-    //   return(<SplashScreen/>)
-    // }
-    // return(
-    //   <Router/>
-    // )
+    if(this.state.loading)
+    {
+      return(<SplashScreen/>)
+    }
     return(
-      <DonasiUpload/>
+      <Router/>
     )
   }
 }

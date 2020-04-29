@@ -40,22 +40,22 @@ const style = StyleSheet.create({
         fontSize: 14,
     },
     // halaman home
-    absoluteContent : {
-        position: 'absolute',
-        zIndex: 1,
-        top: 40,
-        flex: 1,
+    boxboarding: {
+        width: '100%',
+        minHeight: 164,
+        marginVertical: 20,
     },
     boxFitur: {
-        width: '43%',
-        height: 178,
+        width: '100%',
+        height: 75,
         borderWidth: 1,
-        borderColor: '#EBEBEB',
-        backgroundColor: 'white',
+        borderColor: '#dfd3d3',
         borderRadius: 5,
-        paddingHorizontal: 20,
-        justifyContent: 'center',
         marginVertical: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 5,
     },
     // HALAMAN STATISTIK
     boxStatistik :
