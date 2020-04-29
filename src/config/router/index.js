@@ -15,7 +15,7 @@ class App extends Component{
                 <Tab.Navigator initialRouteName="Home" labelStyle={{backgroundColor: 'white', borderTopColor: '#dfd3d3', borderTopWidth: 1}}
                 tabBarOptions={{
                     inactiveTintColor: '#dfd3d3',
-                    activeTintColor: '#2181E1',
+                    activeTintColor: '#252448',
                     keyboardHidesTabBar: true,
                 }}
                 >

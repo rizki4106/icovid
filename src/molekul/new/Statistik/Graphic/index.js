@@ -36,7 +36,7 @@ class Graphic extends Component
                     backgroundGradientTo: '#fff',
                     decimalPlaces: 2,
                     color: (opacity = 1) => '#363636',
-                    labelColor: (opacity = 1) => 'blue',
+                    labelColor: (opacity = 1) => '#363636',
                     barPercentage: 1,
                     propsForDots: {
                         r: '6',

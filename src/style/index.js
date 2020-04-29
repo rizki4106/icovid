@@ -105,9 +105,10 @@ const style = StyleSheet.create({
     },
     barClose: {
         width: 50,
-        height: 5,
+        height: 8,
         borderRadius: 50,
         backgroundColor: '#C4C4C4',
+        
     },
     alertInfo: {
         width: '100%',

@@ -9,6 +9,8 @@ import {Picker} from '@react-native-community/picker';
 import Data from '../../../organism/new/Statistik/Data';
 import Graphic from '../../../molekul/new/Statistik/Graphic';
 import ParentData from '../../../organism/new/Statistik/ParentData';
+import AnimatedLoader from 'react-native-animated-loader';
+
 
 class Statistik extends Component{
     constructor(props)
@@ -24,6 +26,7 @@ class Statistik extends Component{
                 update: 0,
             },
             data: [],
+            loading: true,
         }
     }
 
@@ -61,6 +64,7 @@ class Statistik extends Component{
                     update: new Date().getDate(),
                 },
                 data: data,
+                loading: false,
             })
 
         }else{
@@ -95,46 +99,62 @@ class Statistik extends Component{
                     update: waktu.getDate() + '-' + parseInt(waktu.getMonth() + 1) + '-' + waktu.getFullYear(),
                 },
                 data: globalData,
+                loading: false,
             })
 
         }
     }
 
     handleChaneRegion = async (f) => {
-        this.setState({ wilayah:f})
+        this.setState({wilayah:f, loading: true})
         this.handleDataRegion(f);
 
     }
 
     render(){
-        return(
-            <>
-            <ScrollView style={{flex: 1, backgroundColor: 'white'}}> 
-                <View style={style.container}>
+        if(this.state.loading === true){
 
-                {/* header */}
-                <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
-                    <Text style={[style.boldFont1, {fontSize: 22}]}>Statistik</Text>
-                    <Picker 
-                    selectedValue={this.state.wilayah}
-                    onValueChange={(itemsval, itemsin) => {this.handleChaneRegion(itemsval)}}
-                    style={{heigh: 50, width: 150}}
-                    >
-                    <Picker.Item label="Indonesia" value="indonesia"/>
-                    <Picker.Item label="Dunia" value="dunia"/>
-                    </Picker>
-                </View>
-                <Graphic data={this.state.rootData}/>
-                <ParentData wilayah={this.state.wilayah} data={this.state.rootData}/>
+            return(
+                <>
+                <AnimatedLoader
+                visible={this.state.loading}
+                overlayColor="rgba(255,255,255,1)"
+                source={require('./loading.json')}
+                animationStyle={{width: 250, height: 250}}
+                speed={1}
+                />
+                </>
+            )
+        }else{
+            return(
+                <>
+                <ScrollView style={{flex: 1, backgroundColor: 'white'}}> 
+                    <View style={style.container}>
 
-                {/* bagian data per wilayah secara detail */}
-                <Text style={[style.boldFont1, {fontSize: 22,marginVertical: 30,}]}>Detail</Text>
-                <Data wilayah={this.state.wilayah} data={this.state.data}/>
-                {/*  */}
-                </View>
-            </ScrollView>
-            </>
-        )
+                    {/* header */}
+                    <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
+                        <Text style={[style.boldFont1, {fontSize: 22}]}>Statistik</Text>
+                        <Picker 
+                        selectedValue={this.state.wilayah}
+                        onValueChange={(itemsval, itemsin) => {this.handleChaneRegion(itemsval)}}
+                        style={{heigh: 50, width: 150}}
+                        >
+                        <Picker.Item label="Indonesia" value="indonesia"/>
+                        <Picker.Item label="Dunia" value="dunia"/>
+                        </Picker>
+                    </View>
+                    <Graphic data={this.state.rootData}/>
+                    <ParentData wilayah={this.state.wilayah} data={this.state.rootData}/>
+
+                    {/* bagian data per wilayah secara detail */}
+                    <Text style={[style.boldFont1, {fontSize: 22,marginVertical: 30,}]}>Detail</Text>
+                    <Data wilayah={this.state.wilayah} data={this.state.data}/>
+                    {/*  */}
+                    </View>
+                </ScrollView>
+                </>
+            )
+        }
     }
 }
 
