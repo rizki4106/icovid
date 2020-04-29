@@ -20,13 +20,13 @@ class BoxData extends Component
                 </View>
                 <View style={{flex: 1, flexDirection: 'row'}}>
                     <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-                        <Text style={[style.regularFont, {fontSize: 14}]}>{items[0].positif}</Text>
+                        <Text style={[style.regularFont, {fontSize: 14}]}>{items[0].positif.toLocaleString()}</Text>
                     </View>
                     <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-                        <Text style={[style.regularFont, {fontSize: 14}]}>{items[0].meninggal}</Text>
+                        <Text style={[style.regularFont, {fontSize: 14}]}>{items[0].meninggal.toLocaleString()}</Text>
                     </View>
                     <View style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
-                        <Text style={[style.regularFont, {fontSize: 14}]}>{items[0].sembuh}</Text>
+                        <Text style={[style.regularFont, {fontSize: 14}]}>{items[0].sembuh.toLocaleString()}</Text>
                     </View>
                 </View>
             </View>

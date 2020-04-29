@@ -213,7 +213,7 @@ class Maps extends Component{
                 <View style={[style.containerLoc, (this.state.hiddenDetails) ? {minHeight: 20, zIndex: 1} : {minHeight: 420, zIndex: 1}]}>
 
                         {/* get location */}
-                        <TouchableOpacity style={style.getLocation} onPress={() => {this.getCurrentLocation(); console.log('working')}}>
+                        <TouchableOpacity style={style.getLocation} onPress={() => {this.getCurrentLocation();}}>
                             <Image source={require('../../atom/Home/nonactiveCurrentLocation.png')} style={{width: 20, height: 20}}/>
                         </TouchableOpacity>
                         {/* end */}
